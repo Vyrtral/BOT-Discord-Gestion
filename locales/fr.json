@@ -1,0 +1,644 @@
+{
+  "common": {
+    "on": "actif",
+    "off": "inactif",
+    "none": "aucun",
+    "unknown": "inconnu",
+    "state": "État"
+  },
+  "errors": {
+    "rank": "Tu n’as pas le rang nécessaire pour cette commande.",
+    "self": "Tu ne peux pas te sanctionner toi-même.",
+    "bot": "Je ne peux pas me sanctionner moi-même.",
+    "hierarchy": "Ce membre est à ton niveau ou au-dessus, tu ne peux pas agir sur lui.",
+    "botHierarchy": "Mon rôle est situé sous celui de ce membre : déplace-le plus haut dans la liste des rôles.",
+    "missingPermission": "Il me manque une permission pour faire ça.",
+    "botMissingPermission": "Il me manque une permission Discord pour exécuter cette commande.",
+    "memberNotFound": "Ce membre n’est pas sur le serveur.",
+    "badUserId": "Un identifiant Discord est une suite de 17 à 20 chiffres.",
+    "badDuration": "Durée illisible : `{input}`. Exemples valables : `10m`, `1h30`, `2j`.",
+    "textChannelOnly": "Cette commande ne fonctionne que dans un salon textuel.",
+    "cannotSendThere": "Je ne peux pas écrire dans {channel}.",
+    "roleTooHigh": "Le rôle **{role}** est au-dessus du mien, je ne pourrai jamais l’attribuer.",
+    "fetchMessages": "Impossible de lire les messages de ce salon.",
+    "discord": "Discord a refusé l’opération : {message}",
+    "unexpected": "Quelque chose s’est mal passé. Le détail est dans les logs du bot."
+  },
+  "config": {
+    "rank": {
+      "0": "Membre",
+      "1": "Modérateur",
+      "2": "Administrateur",
+      "3": "Propriétaire du bot"
+    },
+    "locale": {
+      "changed": "Langue du bot réglée sur **{name}**.",
+      "unknown": "Langue inconnue : `{code}`. Disponibles : {list}."
+    },
+    "staff": {
+      "title": "Rôles staff",
+      "empty": "Aucun rôle configuré. Les permissions Discord natives font office de repli.",
+      "missingRole": "Indique le rôle concerné.",
+      "missingRank": "Indique le rang à accorder.",
+      "notConfigured": "Le rôle **{role}** n’est pas dans la liste.",
+      "set": "**{role}** passe au rang {rank}.",
+      "removed": "**{role}** ne donne plus accès aux commandes.",
+      "cleared": "{count} rôle(s) staff retiré(s) de la configuration. Les rôles Discord des membres n’ont pas bougé."
+    }
+  },
+  "sanctions": {
+    "noReason": "Aucune raison indiquée",
+    "dmClosed": "Le membre a ses messages privés fermés, il n’a pas été prévenu.",
+    "autoExpiry": "Fin de la sanction temporaire",
+    "type": {
+      "warn": "Avertissement",
+      "mute": "Mute",
+      "kick": "Expulsion",
+      "ban": "Bannissement"
+    },
+    "field": {
+      "member": "Membre",
+      "moderator": "Modérateur",
+      "reason": "Raison",
+      "duration": "Durée",
+      "until": "Jusqu’au"
+    },
+    "dm": {
+      "warn": "Tu as reçu un avertissement sur {guild}",
+      "mute": "Tu as été rendu muet sur {guild}",
+      "kick": "Tu as été expulsé de {guild}",
+      "ban": "Tu as été banni de {guild}"
+    },
+    "log": {
+      "warn": "Avertissement",
+      "mute": "Mute",
+      "kick": "Expulsion",
+      "ban": "Bannissement",
+      "unmute": "Mute levé",
+      "unban": "Bannissement levé"
+    }
+  },
+  "moderation": {
+    "ban": {
+      "success": "**{user}** est banni du serveur.",
+      "successTemporary": "**{user}** est banni pour {duration}.",
+      "already": "Ce compte est déjà banni."
+    },
+    "unban": {
+      "success": "**{user}** est débanni.",
+      "notBanned": "Ce compte ne figure pas dans la liste des bannis."
+    },
+    "kick": {
+      "success": "**{user}** est expulsé du serveur."
+    },
+    "mute": {
+      "success": "**{user}** est muet pour {duration}.",
+      "tooLong": "Discord plafonne le mute à 28 jours. Au-delà, il faut passer par un ban temporaire."
+    },
+    "unmute": {
+      "success": "**{user}** peut à nouveau écrire.",
+      "notMuted": "Ce membre n’est pas muet.",
+      "allDone": "{count} membre(s) libéré(s)."
+    },
+    "warn": {
+      "success": "**{user}** a été averti. C’est son avertissement n°{total}."
+    },
+    "clear": {
+      "success": "{count} message(s) supprimé(s).",
+      "successUser": "{count} message(s) de **{user}** supprimé(s).",
+      "nothing": "Rien à supprimer ici : messages trop anciens, épinglés, ou aucun ne correspond.",
+      "skipped": "{count} message(s) laissés de côté (plus de 14 jours ou épinglés).",
+      "failed": "La suppression groupée a échoué. Vérifie que j’ai la permission « Gérer les messages »."
+    },
+    "sanctions": {
+      "title": "Historique de {user}",
+      "footer": "{count} entrée(s)",
+      "empty": "Aucune sanction enregistrée pour **{user}**.",
+      "lifted": "levée",
+      "notFound": "Aucune sanction n°{id} sur ce serveur.",
+      "removed": "La sanction n°{id} est marquée comme levée.",
+      "cleared": "{count} sanction(s) effacée(s) pour **{user}**."
+    },
+    "salon": {
+      "locked": "{channel} est verrouillé.",
+      "unlocked": "{channel} est rouvert.",
+      "defaultReason": "Aucune raison indiquée",
+      "slowOn": "Délai de {duration} entre deux messages dans {channel}.",
+      "slowOff": "Le mode lent est retiré de {channel}.",
+      "hidden": "{channel} est masqué à @everyone.",
+      "shown": "{channel} est de nouveau visible.",
+      "renewed": "Salon renouvelé par {user}. L’historique précédent a été supprimé.",
+      "renewedElsewhere": "Salon renouvelé : {channel}. L’ancien et son historique ont été supprimés."
+    }
+  },
+  "security": {
+    "saved": "Réglage enregistré.",
+    "missingRole": "Indique le rôle concerné.",
+    "status": {
+      "title": "Protections du serveur",
+      "allowed": "domaine(s) autorisé(s)",
+      "entries": "entrée(s)",
+      "exempt": "Rôles exemptés",
+      "noAgeFilter": "pas de filtre d’ancienneté"
+    },
+    "field": {
+      "action": "Réponse appliquée",
+      "detail": "Détail"
+    },
+    "action": {
+      "warn": "avertissement",
+      "delete": "suppression du message",
+      "mute": "mute",
+      "kick": "expulsion",
+      "ban": "bannissement",
+      "derank": "retrait des rôles sensibles",
+      "none": "aucune action possible"
+    },
+    "event": {
+      "channelDelete": "suppression de salons",
+      "channelCreate": "création de salons",
+      "roleDelete": "suppression de rôles",
+      "roleCreate": "création de rôles",
+      "memberBan": "bannissements",
+      "memberKick": "expulsions",
+      "webhookCreate": "création de webhooks"
+    },
+    "spam": {
+      "name": "Antispam",
+      "triggered": "Antispam déclenché"
+    },
+    "links": {
+      "name": "Filtre de liens",
+      "allowlist": "Domaines autorisés",
+      "blocked": "Lien non autorisé supprimé",
+      "invite": "Invitation vers un autre serveur supprimée",
+      "added": "`{domain}` est désormais autorisé.",
+      "removed": "`{domain}` n’est plus autorisé.",
+      "missingDomain": "Indique le domaine concerné.",
+      "badDomain": "`{input}` ne ressemble pas à un domaine."
+    },
+    "words": {
+      "name": "Mots interdits",
+      "triggered": "Mot interdit détecté",
+      "added": "Mot ajouté à la liste.",
+      "removed": "Mot retiré de la liste.",
+      "alreadyThere": "Ce mot est déjà dans la liste.",
+      "notThere": "Ce mot n’est pas dans la liste.",
+      "missingWord": "Indique le mot concerné."
+    },
+    "mentions": {
+      "name": "Anti mass-mention",
+      "triggered": "Trop de mentions dans un message"
+    },
+    "raid": {
+      "name": "Antiraid",
+      "burst": "{count} arrivées en quelques secondes : possible raid en cours.",
+      "youngAccount": "Compte trop récent, expulsé automatiquement."
+    },
+    "nuke": {
+      "name": "Antinuke",
+      "triggered": "Antinuke déclenché après {count} actions rapprochées",
+      "needsAuditLog": "Il me manque la permission « Voir les logs d’audit » : sans elle, l’antinuke ne peut identifier personne."
+    },
+    "lockdown": {
+      "locked": "Serveur verrouillé : {changed} salon(s) fermés sur {total}.",
+      "unlocked": "Serveur rouvert : {changed} salon(s) déverrouillés sur {total}.",
+      "defaultReason": "Verrouillage général"
+    },
+    "bots": {
+      "name": "Anti-bot",
+      "triggered": "Bot non autorisé expulsé",
+      "bot": "Bot",
+      "addedBy": "Ajouté par",
+      "allowed": "Bots autorisés",
+      "allowedCount": "autorisé(s)",
+      "missingBot": "Indique le bot concerné.",
+      "notABot": "**{user}** n’est pas un bot.",
+      "needsAuditLog": "Sans la permission « Voir les logs d’audit », je ne pourrai pas dire qui a ajouté le bot."
+    },
+    "webhooks": {
+      "name": "Anti-webhook",
+      "triggered": "Webhook supprimé",
+      "needsPermissions": "Il me manque « Gérer les webhooks » ou « Voir les logs d’audit » : la protection ne se déclenchera pas."
+    },
+    "pings": {
+      "name": "Anti-ping",
+      "triggered": "Mention d’un membre protégé",
+      "protected": "Membres protégés",
+      "protectedCount": "protégé(s)",
+      "missingMember": "Indique le membre concerné."
+    },
+    "admin": {
+      "name": "Anti-admin",
+      "triggered": "Rôle à permissions sensibles retiré"
+    },
+    "vanity": {
+      "name": "Anti-vanity",
+      "triggered": "URL personnalisée modifiée",
+      "expected": "Code attendu",
+      "found": "Code trouvé",
+      "restored": "code remis en place",
+      "failed": "remise en place impossible",
+      "noneYet": "Ce serveur n’a pas encore d’URL personnalisée : la protection s’activera dès qu’il en aura une."
+    }
+  },
+  "logs": {
+    "title": "Journalisation",
+    "set": "Les logs **{category}** partent dans {channel}.",
+    "allSet": "Toutes les catégories de logs partent dans {channel}.",
+    "disabled": "Les logs **{category}** sont coupés.",
+    "notConfigured": "La catégorie **{category}** n’était pas configurée.",
+    "message": {
+      "deleted": "Message supprimé dans {channel}",
+      "edited": "Message modifié dans {channel} · [aller au message]({url})",
+      "bulkDeleted": "{count} messages supprimés d’un coup dans {channel}",
+      "content": "Contenu",
+      "attachments": "Fichiers joints",
+      "before": "Avant",
+      "after": "Après"
+    },
+    "member": {
+      "joined": "{member} a rejoint le serveur.",
+      "left": "{member} a quitté le serveur.",
+      "accountAge": "Compte créé",
+      "wasHere": "Était là depuis",
+      "roles": "Rôles au départ",
+      "rolesChanged": "Rôles de {member} modifiés",
+      "rolesAdded": "Ajoutés",
+      "rolesRemoved": "Retirés",
+      "nickname": "Surnom modifié",
+      "invitedBy": "Invité par"
+    },
+    "channel": {
+      "created": "Salon **{name}** créé ({kind})",
+      "deleted": "Salon **{name}** supprimé ({kind})"
+    },
+    "role": {
+      "created": "Rôle **{name}** créé",
+      "deleted": "Rôle **{name}** supprimé"
+    },
+    "voice": {
+      "joined": "{member} a rejoint {channel}",
+      "left": "{member} a quitté {channel}",
+      "moved": "{member} est passé de {from} à {to}"
+    },
+    "blacklistReban": "**{user}** a été rebanni : compte en blacklist."
+  },
+  "tickets": {
+    "noTopic": "Sans sujet",
+    "created": "Ton ticket est ouvert : {channel}",
+    "panel": {
+      "title": "Besoin d’aide ?",
+      "description": "Ouvre un ticket, un membre du staff te répondra dans un salon privé.",
+      "button": "Ouvrir un ticket",
+      "placeholder": "Choisis un sujet",
+      "published": "Panneau publié dans {channel}.",
+      "failed": "Le panneau n’a pas pu être publié."
+    },
+    "button": {
+      "claim": "Prendre en charge",
+      "close": "Fermer"
+    },
+    "opened": {
+      "title": "Ticket #{number}",
+      "description": "Bienvenue {member}. Décris ta demande, le staff arrive."
+    },
+    "field": {
+      "topic": "Sujet",
+      "author": "Ouvert par",
+      "closedBy": "Fermé par",
+      "category": "Catégorie",
+      "staff": "Rôle staff",
+      "transcripts": "Transcripts",
+      "limit": "Tickets simultanés"
+    },
+    "error": {
+      "limit": "Tu as déjà un ticket ouvert.",
+      "permission": "Il me manque la permission « Gérer les salons ».",
+      "creation": "Le salon du ticket n’a pas pu être créé."
+    },
+    "claim": {
+      "done": "{user} prend ce ticket en charge.",
+      "already": "Ce ticket est déjà pris en charge par {user}.",
+      "notAllowed": "Seul le staff peut prendre un ticket en charge."
+    },
+    "close": {
+      "done": "Ticket fermé. Le salon disparaît dans quelques secondes.",
+      "notATicket": "Cette commande s’utilise dans un ticket ouvert.",
+      "notAllowed": "Tu ne peux pas fermer ce ticket."
+    },
+    "settings": {
+      "title": "Réglages des tickets",
+      "saved": "Réglages enregistrés."
+    },
+    "topics": {
+      "title": "Sujets de ticket",
+      "added": "Sujet **{label}** ajouté sous le numéro {id}.",
+      "removed": "Sujet n°{id} supprimé.",
+      "notFound": "Aucun sujet n°{id}.",
+      "missingLabel": "Indique le libellé du sujet.",
+      "missingNumber": "Indique le numéro du sujet à retirer."
+    },
+    "transcript": {
+      "title": "Transcript du ticket #{number}"
+    }
+  },
+  "xp": {
+    "disabled": "Le système de niveaux est désactivé sur ce serveur.",
+    "botsExcluded": "Les bots ne gagnent pas d’expérience.",
+    "noData": "**{user}** n’a pas encore d’expérience.",
+    "emptyLeaderboard": "Personne n’a encore gagné d’expérience.",
+    "levelUp": "{member} passe niveau **{level}**.",
+    "setDone": "L’expérience de **{user}** est fixée à {value}.",
+    "resetUser": "L’expérience de **{user}** est remise à zéro.",
+    "resetAll": "Expérience remise à zéro pour {count} membre(s).",
+    "card": {
+      "title": "Niveau de {user}",
+      "level": "Niveau",
+      "total": "Expérience totale",
+      "rank": "Classement",
+      "messages": "Messages",
+      "voice": "Temps en vocal"
+    },
+    "leaderboard": {
+      "title": "Classement de {guild}",
+      "footer": "Page {page} sur {pages}"
+    },
+    "settings": {
+      "title": "Réglages des niveaux",
+      "saved": "Réglages enregistrés.",
+      "perMessage": "Xp par message",
+      "perVoiceMinute": "Xp par minute de vocal",
+      "cooldown": "Délai entre deux gains",
+      "announce": "Annonce",
+      "channel": "Salon d’annonce"
+    },
+    "rewards": {
+      "title": "Rôles de niveau",
+      "set": "Le niveau {level} donne désormais le rôle **{role}**.",
+      "removed": "Plus aucun rôle au niveau {level}.",
+      "notFound": "Aucun rôle configuré pour le niveau {level}.",
+      "missingLevel": "Indique le niveau concerné.",
+      "missingRole": "Indique le rôle à donner."
+    },
+    "ignored": {
+      "title": "Salons sans expérience",
+      "missingChannel": "Indique le salon concerné."
+    }
+  },
+  "welcome": {
+    "title": "Accueil et départs",
+    "saved": "Réglages enregistrés.",
+    "preview": "Aperçu du message d’accueil",
+    "variables": "Variables disponibles",
+    "field": {
+      "join": "Arrivées",
+      "leave": "Départs",
+      "autoRole": "Rôle automatique",
+      "message": "Message d’accueil"
+    },
+    "var": {
+      "mention": "mentionne le nouveau membre",
+      "username": "son pseudo",
+      "tag": "son pseudo complet",
+      "id": "son identifiant",
+      "guild": "le nom du serveur",
+      "memberCount": "le nombre de membres"
+    }
+  },
+  "counters": {
+    "title": "Compteurs",
+    "created": "Compteur créé : {channel}",
+    "linked": "{channel} devient un compteur.",
+    "removed": "{channel} n’est plus un compteur.",
+    "notACounter": "Ce salon n’est pas un compteur.",
+    "templateNeedsValue": "Le modèle doit contenir `{valeur}`, sinon rien ne s’affiche.",
+    "createFailed": "Le salon n’a pas pu être créé.",
+    "kind": {
+      "membres": "Membres",
+      "humains": "Humains",
+      "bots": "Bots",
+      "boosts": "Boosts",
+      "vocal": "En vocal"
+    }
+  },
+  "info": {
+    "server": {
+      "owner": "Propriétaire",
+      "created": "Créé le",
+      "id": "Identifiant",
+      "members": "Membres",
+      "channels": "Salons (texte · vocal)",
+      "roles": "Rôles",
+      "boosts": "Boosts",
+      "tier": "niveau",
+      "verification": "Vérification",
+      "emojis": "Émojis"
+    },
+    "member": {
+      "id": "Identifiant",
+      "created": "Compte créé le",
+      "joined": "Arrivé le",
+      "rank": "Rang",
+      "roles": "Rôles ({count})",
+      "mutedUntil": "Muet jusqu’à",
+      "boosting": "Booste depuis",
+      "sanctions": "Sanctions",
+      "notInGuild": "Ce compte n’est pas sur le serveur."
+    },
+    "bot": {
+      "title": "État du bot",
+      "roundTrip": "Aller-retour",
+      "gateway": "Passerelle",
+      "uptime": "En ligne depuis",
+      "guilds": "Serveurs"
+    },
+    "avatar": {
+      "title": "Avatar de {user}"
+    },
+    "banner": {
+      "title": "Bannière de {user}",
+      "none": "**{user}** n’a pas de bannière."
+    },
+    "role": {
+      "members": "Membres",
+      "position": "Position",
+      "colour": "Couleur",
+      "hoisted": "Affiché séparément",
+      "mentionable": "Mentionnable",
+      "permissions": "Permissions notables"
+    },
+    "channel": {
+      "kind": "Type",
+      "category": "Catégorie",
+      "topic": "Sujet",
+      "slowmode": "Mode lent",
+      "nsfw": "NSFW"
+    },
+    "boosters": {
+      "title": "Boosters du serveur",
+      "none": "Personne ne booste le serveur.",
+      "count": "Boosters"
+    }
+  },
+  "help": {
+    "title": "Commandes disponibles",
+    "intro": "sélectionne une catégorie ci-dessous pour voir les commandes disponibles",
+    "footer": "Ton rang : {rank}",
+    "unknown": "La commande `/{name}` n’existe pas.",
+    "subcommands": "Sous-commandes",
+    "options": "Options",
+    "optional": "facultatif",
+    "requiredRank": "Rang requis",
+    "category": {
+      "moderation": "Modération",
+      "securite": "Sécurité",
+      "tickets": "Tickets",
+      "niveaux": "Niveaux",
+      "configuration": "Configuration",
+      "info": "Informations",
+      "vocal": "Vocal"
+    },
+    "placeholder": "Choisis une catégorie de commandes",
+    "centre": "Centre de commandes",
+    "count": "{count} commande(s)",
+    "stat": {
+      "categories": "Catégories accessibles",
+      "commands": "Commandes accessibles"
+    },
+    "describe": {
+      "moderation": "Sanctions, messages, salons",
+      "securite": "Protections automatiques et verrouillage",
+      "tickets": "Panneau, sujets et fermeture",
+      "niveaux": "Expérience, classement et récompenses",
+      "configuration": "Réglages du bot sur ce serveur",
+      "info": "Serveur, membres et état du bot",
+      "vocal": "Déplacement, anti-join et whitelist"
+    },
+    "countTruncated": "{count} commande(s), {hidden} non affichée(s)"
+  },
+  "antijoin": {
+    "title": "Salons vocaux verrouillés",
+    "locked": "{channel} est verrouillé, plus personne ne peut le rejoindre.",
+    "unlocked": "{channel} est rouvert.",
+    "notLocked": "{channel} n’était pas verrouillé.",
+    "cleared": "{count} salon(s) déverrouillé(s)."
+  },
+  "wl": {
+    "title": "Whitelist vocale",
+    "added": "**{user}** peut désormais rejoindre les salons verrouillés.",
+    "removed": "**{user}** ne traverse plus l’anti-join.",
+    "already": "**{user}** est déjà sur la liste.",
+    "notThere": "**{user}** n’est pas sur la liste.",
+    "cleared": "{count} membre(s) retiré(s) de la liste."
+  },
+  "vocal": {
+    "moved": "**{user}** a été déplacé dans {channel}.",
+    "disconnected": "**{user}** a été déconnecté du vocal.",
+    "muted": "**{user}** ne peut plus parler.",
+    "unmuted": "**{user}** peut à nouveau parler.",
+    "gathered": "{count} membre(s) rassemblé(s) dans {channel}.",
+    "notConnected": "**{user}** n’est dans aucun salon vocal.",
+    "youAreNotConnected": "Tu n’es dans aucun salon vocal.",
+    "sameChannel": "C’est déjà le salon où tu te trouves.",
+    "banned": "**{user}** est interdit de vocal.",
+    "unbanned": "**{user}** peut à nouveau rejoindre le vocal.",
+    "notBanned": "**{user}** n’était pas interdit de vocal.",
+    "bannedTitle": "Interdits de vocal"
+  },
+  "blacklist": {
+    "title": "Blacklist",
+    "footer": "{count} compte(s)",
+    "added": "**{user}** est banni et inscrit sur la blacklist.",
+    "removed": "**{user}** est retiré de la blacklist et débanni.",
+    "already": "**{user}** est déjà sur la blacklist.",
+    "notThere": "Ce compte n’est pas sur la blacklist.",
+    "cleared": "{count} compte(s) retiré(s). Les bannissements Discord restent en place.",
+    "defaultReason": "Blacklist"
+  },
+  "role": {
+    "added": "Le rôle **{role}** a été donné à **{user}**.",
+    "removed": "Le rôle **{role}** a été retiré à **{user}**.",
+    "alreadyHas": "**{user}** a déjà le rôle **{role}**.",
+    "doesNotHave": "**{user}** n’a pas le rôle **{role}**.",
+    "aboveYou": "Le rôle **{role}** est au-dessus du tien.",
+    "nicknameSet": "Le surnom de **{user}** est désormais **{nickname}**.",
+    "nicknameCleared": "Le surnom de **{user}** a été retiré.",
+    "forbidden": "Le rôle **{role}** est désormais interdit à **{user}**.",
+    "allowed": "Le rôle **{role}** n’est plus interdit à **{user}**.",
+    "notForbidden": "Le rôle **{role}** n’était pas interdit à **{user}**."
+  },
+  "dire": {
+    "sent": "Message publié dans {channel}.",
+    "failed": "Le message n’a pas pu être publié.",
+    "badImage": "Le lien de l’image doit commencer par https://"
+  },
+  "snipe": {
+    "nothing": "Rien à afficher pour ce salon.",
+    "noContent": "Message sans texte",
+    "field": {
+      "at": "Quand"
+    },
+    "title": {
+      "deleted": "Dernier message supprimé",
+      "edited": "Dernier message modifié"
+    }
+  },
+  "autorole": {
+    "title": "Rôles automatiques",
+    "added": "**{role}** sera donné à chaque arrivée.",
+    "removed": "**{role}** ne sera plus donné automatiquement.",
+    "already": "**{role}** est déjà dans la liste.",
+    "notThere": "**{role}** n’est pas dans la liste.",
+    "tooMany": "Maximum {max} rôles automatiques.",
+    "managed": "**{role}** est géré par une intégration, il ne peut pas être attribué."
+  },
+  "invites": {
+    "unit": "invitation(s)",
+    "empty": "Personne n’a encore invité de membre.",
+    "leaderboard": "Classement des invitations",
+    "bonusDone": "**{user}** totalise maintenant {total} invitation(s).",
+    "unknownOrigin": "On ne sait pas qui a invité **{user}**.",
+    "card": {
+      "title": "Invitations de {user}",
+      "total": "Total",
+      "joined": "Arrivés",
+      "left": "Partis",
+      "bonus": "Bonus"
+    },
+    "origin": {
+      "title": "Arrivée de {user}",
+      "by": "Invité par",
+      "code": "Code utilisé",
+      "when": "Arrivé le"
+    },
+    "resetAll": "Compteurs d’invitations remis à zéro pour {count} membre(s).",
+    "resetUser": "Compteur d’invitations de **{user}** remis à zéro."
+  },
+  "vocalperso": {
+    "title": "Salons vocaux temporaires",
+    "enabled": "Entrer dans {channel} créera désormais un salon privé.",
+    "disabled": "Les salons vocaux temporaires sont désactivés.",
+    "notConfigured": "Aucun salon d’entrée configuré.",
+    "templateNeedsName": "Le modèle doit contenir `{pseudo}`.",
+    "unlimited": "illimité",
+    "open": "{count} salon(s) ouvert(s)",
+    "field": {
+      "hub": "Salon d’entrée",
+      "category": "Catégorie",
+      "template": "Modèle de nom",
+      "limit": "Places"
+    }
+  },
+  "systeme": {
+    "title": "État du bot",
+    "memory": "Mémoire",
+    "renamed": "Le bot s’appelle désormais **{name}**.",
+    "renameFailed": "Changement de nom refusé : {message}. Discord n’en autorise que deux par heure.",
+    "avatarChanged": "Avatar mis à jour.",
+    "badImage": "Le lien doit commencer par https://",
+    "statusChanged": "Statut mis à jour. Il repartira sur `/aide` au prochain démarrage.",
+    "backupDone": "Structure exportée : {roles} rôle(s) et {salons} salon(s).",
+    "restarting": "Arrêt en cours. Le bot ne repartira que si un superviseur le relance."
+  }
+}

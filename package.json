@@ -1,0 +1,27 @@
+{
+  "name": "gestion",
+  "version": "1.0.0",
+  "description": "Bot de gestion pour serveurs Discord : moderation, securite, tickets, logs, niveaux. Interface Components V2.",
+  "author": "Vyrtral & Sei",
+  "license": "MIT",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "node src/scripts/deploy.js",
+    "test": "node --test \"tests/**/*.test.js\"",
+    "commandes": "node src/scripts/commandes.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "discord.js": "^14.16.3"
+  },
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "moderation",
+    "discord.js"
+  ]
+}

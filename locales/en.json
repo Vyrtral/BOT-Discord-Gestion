@@ -1,0 +1,946 @@
+{
+  "common": {
+    "on": "on",
+    "off": "off",
+    "none": "none",
+    "unknown": "unknown",
+    "state": "State"
+  },
+  "errors": {
+    "rank": "You don't have the rank required for this command.",
+    "self": "You can't sanction yourself.",
+    "bot": "I can't sanction myself.",
+    "hierarchy": "This member is at or above your level, you can't act on them.",
+    "botHierarchy": "My role sits below this member's: move it higher in the role list.",
+    "missingPermission": "I'm missing a permission to do that.",
+    "botMissingPermission": "I'm missing a Discord permission to run this command.",
+    "memberNotFound": "This member isn't on the server.",
+    "badUserId": "A Discord ID is a string of 17 to 20 digits.",
+    "badDuration": "Unreadable duration: `{input}`. Valid examples: `10m`, `1h30`, `2d`.",
+    "textChannelOnly": "This command only works in a text channel.",
+    "cannotSendThere": "I can't post in {channel}.",
+    "roleTooHigh": "The **{role}** role is above mine, I'll never be able to assign it.",
+    "fetchMessages": "Couldn't read this channel's messages.",
+    "discord": "Discord refused the operation: {message}",
+    "unexpected": "Something went wrong. Details are in the bot logs."
+  },
+  "config": {
+    "rank": {
+      "0": "Member",
+      "1": "Moderator",
+      "2": "Administrator",
+      "3": "Bot owner"
+    },
+    "locale": {
+      "changed": "Bot language set to **{name}**.",
+      "unknown": "Unknown language: `{code}`. Available: {list}."
+    },
+    "staff": {
+      "title": "Staff roles",
+      "empty": "No role configured. Native Discord permissions are used as a fallback.",
+      "missingRole": "Name the role.",
+      "missingRank": "Name the rank to grant.",
+      "notConfigured": "The **{role}** role isn't on the list.",
+      "set": "**{role}** now has the {rank} rank.",
+      "removed": "**{role}** no longer grants command access.",
+      "cleared": "{count} staff role(s) removed from the configuration. Members' Discord roles were left alone."
+    }
+  },
+  "sanctions": {
+    "noReason": "No reason given",
+    "dmClosed": "The member has direct messages closed, they weren't notified.",
+    "autoExpiry": "Temporary sanction expired",
+    "type": {
+      "warn": "Warning",
+      "mute": "Mute",
+      "kick": "Kick",
+      "ban": "Ban"
+    },
+    "field": {
+      "member": "Member",
+      "moderator": "Moderator",
+      "reason": "Reason",
+      "duration": "Duration",
+      "until": "Until"
+    },
+    "dm": {
+      "warn": "You received a warning on {guild}",
+      "mute": "You were muted on {guild}",
+      "kick": "You were kicked from {guild}",
+      "ban": "You were banned from {guild}"
+    },
+    "log": {
+      "warn": "Warning",
+      "mute": "Mute",
+      "kick": "Kick",
+      "ban": "Ban",
+      "unmute": "Mute lifted",
+      "unban": "Ban lifted"
+    }
+  },
+  "moderation": {
+    "ban": {
+      "success": "**{user}** is banned from the server.",
+      "successTemporary": "**{user}** is banned for {duration}.",
+      "already": "This account is already banned."
+    },
+    "unban": {
+      "success": "**{user}** is unbanned.",
+      "notBanned": "This account isn't on the ban list."
+    },
+    "kick": {
+      "success": "**{user}** was kicked from the server."
+    },
+    "mute": {
+      "success": "**{user}** is muted for {duration}.",
+      "tooLong": "Discord caps mutes at 28 days. Beyond that, use a temporary ban."
+    },
+    "unmute": {
+      "success": "**{user}** can post again.",
+      "notMuted": "This member isn't muted.",
+      "allDone": "{count} member(s) released."
+    },
+    "warn": {
+      "success": "**{user}** has been warned. That's warning number {total}."
+    },
+    "clear": {
+      "success": "{count} message(s) deleted.",
+      "successUser": "{count} message(s) from **{user}** deleted.",
+      "nothing": "Nothing to delete here: messages too old, pinned, or none matching.",
+      "skipped": "{count} message(s) left alone (older than 14 days or pinned).",
+      "failed": "Bulk delete failed. Check that I have the Manage Messages permission."
+    },
+    "sanctions": {
+      "title": "History for {user}",
+      "footer": "{count} entry(ies)",
+      "empty": "No sanction on record for **{user}**.",
+      "lifted": "lifted",
+      "notFound": "No sanction #{id} on this server.",
+      "removed": "Sanction #{id} is marked as lifted.",
+      "cleared": "{count} sanction(s) cleared for **{user}**."
+    },
+    "salon": {
+      "locked": "{channel} is locked.",
+      "unlocked": "{channel} is open again.",
+      "defaultReason": "No reason given",
+      "slowOn": "{duration} between messages in {channel}.",
+      "slowOff": "Slowmode removed from {channel}.",
+      "hidden": "{channel} is hidden from @everyone.",
+      "shown": "{channel} is visible again.",
+      "renewed": "Channel renewed by {user}. The previous history was deleted.",
+      "renewedElsewhere": "Channel renewed: {channel}. The old one and its history are gone."
+    }
+  },
+  "security": {
+    "saved": "Setting saved.",
+    "missingRole": "Name the role.",
+    "status": {
+      "title": "Server protections",
+      "allowed": "allowed domain(s)",
+      "entries": "entry(ies)",
+      "exempt": "Exempt roles",
+      "noAgeFilter": "no age filter"
+    },
+    "field": {
+      "action": "Action taken",
+      "detail": "Detail"
+    },
+    "action": {
+      "warn": "warning",
+      "delete": "message deleted",
+      "mute": "mute",
+      "kick": "kick",
+      "ban": "ban",
+      "derank": "sensitive roles removed",
+      "none": "no action possible"
+    },
+    "event": {
+      "channelDelete": "channel deletions",
+      "channelCreate": "channel creations",
+      "roleDelete": "role deletions",
+      "roleCreate": "role creations",
+      "memberBan": "bans",
+      "memberKick": "kicks",
+      "webhookCreate": "webhook creations"
+    },
+    "spam": {
+      "name": "Anti-spam",
+      "triggered": "Anti-spam triggered"
+    },
+    "links": {
+      "name": "Link filter",
+      "allowlist": "Allowed domains",
+      "blocked": "Unauthorised link deleted",
+      "invite": "Invite to another server deleted",
+      "added": "`{domain}` is now allowed.",
+      "removed": "`{domain}` is no longer allowed.",
+      "missingDomain": "Name the domain.",
+      "badDomain": "`{input}` doesn't look like a domain."
+    },
+    "words": {
+      "name": "Banned words",
+      "triggered": "Banned word detected",
+      "added": "Word added to the list.",
+      "removed": "Word removed from the list.",
+      "alreadyThere": "That word is already on the list.",
+      "notThere": "That word isn't on the list.",
+      "missingWord": "Name the word."
+    },
+    "mentions": {
+      "name": "Mass-mention filter",
+      "triggered": "Too many mentions in one message"
+    },
+    "raid": {
+      "name": "Anti-raid",
+      "burst": "{count} joins within seconds: a raid may be underway.",
+      "youngAccount": "Account too new, kicked automatically."
+    },
+    "nuke": {
+      "name": "Anti-nuke",
+      "triggered": "Anti-nuke triggered after {count} rapid actions",
+      "needsAuditLog": "I'm missing the View Audit Log permission: without it, anti-nuke can't identify anyone."
+    },
+    "lockdown": {
+      "locked": "Server locked: {changed} channel(s) closed out of {total}.",
+      "unlocked": "Server reopened: {changed} channel(s) unlocked out of {total}.",
+      "defaultReason": "Server-wide lockdown"
+    },
+    "bots": {
+      "name": "Anti-bot",
+      "triggered": "Unauthorised bot kicked",
+      "bot": "Bot",
+      "addedBy": "Added by",
+      "allowed": "Allowed bots",
+      "allowedCount": "allowed",
+      "missingBot": "Name the bot.",
+      "notABot": "**{user}** isn't a bot.",
+      "needsAuditLog": "Without the View Audit Log permission I can't say who added the bot."
+    },
+    "webhooks": {
+      "name": "Anti-webhook",
+      "triggered": "Webhook deleted",
+      "needsPermissions": "I'm missing Manage Webhooks or View Audit Log: the protection won't fire."
+    },
+    "pings": {
+      "name": "Anti-ping",
+      "triggered": "Protected member mentioned",
+      "protected": "Protected members",
+      "protectedCount": "protected",
+      "missingMember": "Name the member."
+    },
+    "admin": {
+      "name": "Anti-admin",
+      "triggered": "Role with sensitive permissions removed"
+    },
+    "vanity": {
+      "name": "Anti-vanity",
+      "triggered": "Vanity URL changed",
+      "expected": "Expected code",
+      "found": "Found code",
+      "restored": "code restored",
+      "failed": "could not restore",
+      "noneYet": "This server has no vanity URL yet: the protection kicks in as soon as it gets one."
+    }
+  },
+  "logs": {
+    "title": "Logging",
+    "set": "**{category}** logs now go to {channel}.",
+    "allSet": "All log categories now go to {channel}.",
+    "disabled": "**{category}** logs are off.",
+    "notConfigured": "The **{category}** category wasn't configured.",
+    "message": {
+      "deleted": "Message deleted in {channel}",
+      "edited": "Message edited in {channel} · [jump to message]({url})",
+      "bulkDeleted": "{count} messages bulk-deleted in {channel}",
+      "content": "Content",
+      "attachments": "Attachments",
+      "before": "Before",
+      "after": "After"
+    },
+    "member": {
+      "joined": "{member} joined the server.",
+      "left": "{member} left the server.",
+      "accountAge": "Account created",
+      "wasHere": "Was here since",
+      "roles": "Roles on leaving",
+      "rolesChanged": "Roles changed for {member}",
+      "rolesAdded": "Added",
+      "rolesRemoved": "Removed",
+      "nickname": "Nickname changed",
+      "invitedBy": "Invited by"
+    },
+    "channel": {
+      "created": "Channel **{name}** created ({kind})",
+      "deleted": "Channel **{name}** deleted ({kind})"
+    },
+    "role": {
+      "created": "Role **{name}** created",
+      "deleted": "Role **{name}** deleted"
+    },
+    "voice": {
+      "joined": "{member} joined {channel}",
+      "left": "{member} left {channel}",
+      "moved": "{member} moved from {from} to {to}"
+    },
+    "blacklistReban": "**{user}** was re-banned: blacklisted account."
+  },
+  "tickets": {
+    "noTopic": "No topic",
+    "created": "Your ticket is open: {channel}",
+    "panel": {
+      "title": "Need help?",
+      "description": "Open a ticket and a staff member will answer in a private channel.",
+      "button": "Open a ticket",
+      "placeholder": "Pick a topic",
+      "published": "Panel posted in {channel}.",
+      "failed": "The panel couldn't be posted."
+    },
+    "button": {
+      "claim": "Claim",
+      "close": "Close"
+    },
+    "opened": {
+      "title": "Ticket #{number}",
+      "description": "Welcome {member}. Describe your request, staff is on the way."
+    },
+    "field": {
+      "topic": "Topic",
+      "author": "Opened by",
+      "closedBy": "Closed by",
+      "category": "Category",
+      "staff": "Staff role",
+      "transcripts": "Transcripts",
+      "limit": "Concurrent tickets"
+    },
+    "error": {
+      "limit": "You already have a ticket open.",
+      "permission": "I'm missing the Manage Channels permission.",
+      "creation": "The ticket channel couldn't be created."
+    },
+    "claim": {
+      "done": "{user} is taking this ticket.",
+      "already": "This ticket is already claimed by {user}.",
+      "notAllowed": "Only staff can claim a ticket."
+    },
+    "close": {
+      "done": "Ticket closed. The channel disappears in a few seconds.",
+      "notATicket": "Use this command inside an open ticket.",
+      "notAllowed": "You can't close this ticket."
+    },
+    "settings": {
+      "title": "Ticket settings",
+      "saved": "Settings saved."
+    },
+    "topics": {
+      "title": "Ticket topics",
+      "added": "Topic **{label}** added as number {id}.",
+      "removed": "Topic #{id} deleted.",
+      "notFound": "No topic #{id}.",
+      "missingLabel": "Name the topic label.",
+      "missingNumber": "Give the number of the topic to remove."
+    },
+    "transcript": {
+      "title": "Transcript for ticket #{number}"
+    }
+  },
+  "xp": {
+    "disabled": "The levelling system is off on this server.",
+    "botsExcluded": "Bots don't earn experience.",
+    "noData": "**{user}** has no experience yet.",
+    "emptyLeaderboard": "Nobody has earned experience yet.",
+    "levelUp": "{member} reached level **{level}**.",
+    "setDone": "**{user}**'s experience is set to {value}.",
+    "resetUser": "**{user}**'s experience is reset.",
+    "resetAll": "Experience reset for {count} member(s).",
+    "card": {
+      "title": "{user}'s level",
+      "level": "Level",
+      "total": "Total experience",
+      "rank": "Rank",
+      "messages": "Messages",
+      "voice": "Voice time"
+    },
+    "leaderboard": {
+      "title": "{guild} leaderboard",
+      "footer": "Page {page} of {pages}"
+    },
+    "settings": {
+      "title": "Levelling settings",
+      "saved": "Settings saved.",
+      "perMessage": "Xp per message",
+      "perVoiceMinute": "Xp per voice minute",
+      "cooldown": "Delay between gains",
+      "announce": "Announcement",
+      "channel": "Announcement channel"
+    },
+    "rewards": {
+      "title": "Level roles",
+      "set": "Level {level} now grants the **{role}** role.",
+      "removed": "No more role at level {level}.",
+      "notFound": "No role configured for level {level}.",
+      "missingLevel": "Give the level.",
+      "missingRole": "Name the role to grant."
+    },
+    "ignored": {
+      "title": "Channels without experience",
+      "missingChannel": "Name the channel."
+    }
+  },
+  "welcome": {
+    "title": "Welcome and farewell",
+    "saved": "Settings saved.",
+    "preview": "Welcome message preview",
+    "variables": "Available variables",
+    "field": {
+      "join": "Joins",
+      "leave": "Leaves",
+      "autoRole": "Auto role",
+      "message": "Welcome message"
+    },
+    "var": {
+      "mention": "mentions the new member",
+      "username": "their username",
+      "tag": "their full username",
+      "id": "their ID",
+      "guild": "the server name",
+      "memberCount": "the member count"
+    }
+  },
+  "counters": {
+    "title": "Counters",
+    "created": "Counter created: {channel}",
+    "linked": "{channel} is now a counter.",
+    "removed": "{channel} is no longer a counter.",
+    "notACounter": "This channel isn't a counter.",
+    "templateNeedsValue": "The template must contain `{valeur}`, otherwise nothing shows.",
+    "createFailed": "The channel couldn't be created.",
+    "kind": {
+      "membres": "Members",
+      "humains": "Humans",
+      "bots": "Bots",
+      "boosts": "Boosts",
+      "vocal": "In voice"
+    }
+  },
+  "info": {
+    "server": {
+      "owner": "Owner",
+      "created": "Created on",
+      "id": "ID",
+      "members": "Members",
+      "channels": "Channels (text · voice)",
+      "roles": "Roles",
+      "boosts": "Boosts",
+      "tier": "tier",
+      "verification": "Verification",
+      "emojis": "Emojis"
+    },
+    "member": {
+      "id": "ID",
+      "created": "Account created",
+      "joined": "Joined on",
+      "rank": "Rank",
+      "roles": "Roles ({count})",
+      "mutedUntil": "Muted until",
+      "boosting": "Boosting since",
+      "sanctions": "Sanctions",
+      "notInGuild": "This account isn't on the server."
+    },
+    "bot": {
+      "title": "Bot status",
+      "roundTrip": "Round trip",
+      "gateway": "Gateway",
+      "uptime": "Online for",
+      "guilds": "Servers"
+    },
+    "avatar": {
+      "title": "{user}'s avatar"
+    },
+    "banner": {
+      "title": "{user}'s banner",
+      "none": "**{user}** has no banner."
+    },
+    "role": {
+      "members": "Members",
+      "position": "Position",
+      "colour": "Colour",
+      "hoisted": "Displayed separately",
+      "mentionable": "Mentionable",
+      "permissions": "Notable permissions"
+    },
+    "channel": {
+      "kind": "Type",
+      "category": "Category",
+      "topic": "Topic",
+      "slowmode": "Slowmode",
+      "nsfw": "NSFW"
+    },
+    "boosters": {
+      "title": "Server boosters",
+      "none": "Nobody is boosting the server.",
+      "count": "Boosters"
+    }
+  },
+  "help": {
+    "title": "Available commands",
+    "intro": "pick a category below to see the commands you can use",
+    "footer": "Your rank: {rank}",
+    "unknown": "The `/{name}` command doesn't exist.",
+    "subcommands": "Subcommands",
+    "options": "Options",
+    "optional": "optional",
+    "requiredRank": "Required rank",
+    "category": {
+      "moderation": "Moderation",
+      "securite": "Security",
+      "tickets": "Tickets",
+      "niveaux": "Levels",
+      "configuration": "Configuration",
+      "info": "Information",
+      "vocal": "Voice"
+    },
+    "placeholder": "Pick a command category",
+    "centre": "Command centre",
+    "count": "{count} command(s)",
+    "stat": {
+      "categories": "Categories available",
+      "commands": "Commands available"
+    },
+    "describe": {
+      "moderation": "Sanctions, messages, channels",
+      "securite": "Automatic protections and lockdown",
+      "tickets": "Panel, topics and closing",
+      "niveaux": "Experience, leaderboard and rewards",
+      "configuration": "Bot settings for this server",
+      "info": "Server, members and bot status",
+      "vocal": "Moving members, anti-join and whitelist"
+    },
+    "countTruncated": "{count} command(s), {hidden} not shown"
+  },
+  "commands": {
+    "aide": "List the commands you can use",
+    "aide.commande": "Details of one specific command",
+    "antijoin": "Lock a voice channel against joins",
+    "antijoin.deverrouiller": "Reopen a voice channel",
+    "antijoin.deverrouiller.salon": "Target channel, yours by default",
+    "antijoin.liste": "Locked voice channels",
+    "antijoin.verrouiller": "Nobody else can join this channel",
+    "antijoin.verrouiller.salon": "Target channel, yours by default",
+    "antijoin.vider": "Unlock every voice channel",
+    "autorole": "Roles granted automatically on join",
+    "autorole.ajouter": "Add a role granted on join",
+    "autorole.ajouter.role": "The role to grant",
+    "autorole.liste": "Configured roles",
+    "autorole.retirer": "Remove a role from the list",
+    "autorole.retirer.role": "The role concerned",
+    "ban": "Ban a member from the server",
+    "ban.duree": "Temporary ban, e.g. 7d or 12h. Empty means permanent",
+    "ban.membre": "The member to ban",
+    "ban.purge": "Delete messages from the last N days",
+    "ban.raison": "Reason recorded in the history",
+    "bienvenue": "Join and leave messages",
+    "bienvenue.apercu": "Preview the message with your own details",
+    "bienvenue.arrivee": "Configure how new members are greeted",
+    "bienvenue.arrivee.actif": "Turn the greeting on or off",
+    "bienvenue.arrivee.message": "Text shown, variables allowed",
+    "bienvenue.arrivee.prive": "Message sent privately to the new member",
+    "bienvenue.arrivee.role": "Role granted automatically on arrival",
+    "bienvenue.arrivee.salon": "Channel the message is posted in",
+    "bienvenue.depart": "Configure the farewell message",
+    "bienvenue.depart.actif": "Turn the message on or off",
+    "bienvenue.depart.message": "Text shown, variables allowed",
+    "bienvenue.depart.salon": "Channel the message is posted in",
+    "bienvenue.variables": "List the usable variables",
+    "blacklist": "Permanent ban, reapplied even after a manual unban",
+    "blacklist.ajouter": "Ban and add the account to the list",
+    "blacklist.ajouter.membre": "The account concerned",
+    "blacklist.ajouter.raison": "Reason",
+    "blacklist.liste": "Listed accounts",
+    "blacklist.retirer": "Remove from the list and unban",
+    "blacklist.retirer.identifiant": "Discord ID of the account",
+    "blacklist.vider": "Empty the list, without unbanning",
+    "classement": "Members ranked by experience",
+    "classement.page": "Page to display",
+    "clear": "Delete messages from the channel",
+    "clear.membre": "Only delete this member's messages",
+    "clear.nombre": "How many messages to examine (1 to 100)",
+    "compteur": "Channels whose name shows a server statistic",
+    "compteur.creer": "Create a voice channel used as a counter",
+    "compteur.creer.categorie": "Category to place the channel in",
+    "compteur.creer.modele": "Channel name, {valeur} is replaced",
+    "compteur.creer.type": "What gets counted",
+    "compteur.lier": "Turn an existing channel into a counter",
+    "compteur.lier.modele": "Channel name, {valeur} is replaced",
+    "compteur.lier.salon": "The channel to use",
+    "compteur.lier.type": "What gets counted",
+    "compteur.liste": "Configured counters",
+    "compteur.retirer": "The channel stops being a counter, it isn't deleted",
+    "compteur.retirer.salon": "The channel concerned",
+    "config": "General bot settings for this server",
+    "config.langue": "Change the language the bot answers in",
+    "config.langue.code": "Language code",
+    "config.staff": "Roles allowed to use the bot's commands",
+    "config.staff.operation": "What to do",
+    "config.staff.rang": "Rank granted to the role",
+    "config.staff.role": "The role concerned",
+    "dire": "Post a message as the bot",
+    "dire.panneau": "A framed message in the bot's style",
+    "dire.panneau.contenu": "The message body",
+    "dire.panneau.image": "Link to an image to show",
+    "dire.panneau.pied": "Small line at the bottom",
+    "dire.panneau.salon": "Channel to post in, the current one by default",
+    "dire.panneau.titre": "Title shown large",
+    "dire.texte": "A plain message, no formatting",
+    "dire.texte.message": "The text to post",
+    "dire.texte.salon": "Channel to post in, the current one by default",
+    "infos": "Information about the server, a member or the bot",
+    "infos.avatar": "Show a member's avatar full size",
+    "infos.avatar.membre": "The member concerned, yourself by default",
+    "infos.avatar.serveur": "Use the server-specific avatar if there is one",
+    "infos.banniere": "Show a member's banner",
+    "infos.banniere.membre": "The member concerned, yourself by default",
+    "infos.boosters": "Members boosting the server",
+    "infos.bot": "Bot latency and uptime",
+    "infos.membre": "Member information",
+    "infos.membre.membre": "The member to look up, yourself by default",
+    "infos.role": "Information about a role",
+    "infos.role.role": "The role concerned",
+    "infos.salon": "Information about a channel",
+    "infos.salon.salon": "The channel concerned, the current one by default",
+    "infos.serveur": "Server information",
+    "invitations": "Server invite tracking",
+    "invitations.bonus": "Add or remove invites for a member",
+    "invitations.bonus.membre": "The member concerned",
+    "invitations.bonus.nombre": "Positive to add, negative to remove",
+    "invitations.classement": "The ten best inviters",
+    "invitations.origine": "Who invited a member",
+    "invitations.origine.membre": "The member concerned",
+    "invitations.reinitialiser": "Reset invite counters to zero",
+    "invitations.reinitialiser.membre": "One specific member. Empty means the whole server",
+    "invitations.voir": "A member's invites",
+    "invitations.voir.membre": "The member to look up, yourself by default",
+    "kick": "Kick a member from the server",
+    "kick.membre": "The member to kick",
+    "kick.raison": "Reason recorded in the history",
+    "logs": "Logging channels",
+    "logs.couper": "Stop a log category",
+    "logs.couper.categorie": "Type of events",
+    "logs.definir": "Send a log category to a channel",
+    "logs.definir.categorie": "Type of events",
+    "logs.definir.salon": "Destination channel",
+    "logs.etat": "Configuration summary",
+    "logs.tout": "Send every category to the same channel",
+    "logs.tout.salon": "Destination channel",
+    "mute": "Mute a member for a set duration",
+    "mute.duree": "For example 10m, 1h30, 2d. 28 days maximum",
+    "mute.membre": "The member to mute",
+    "mute.raison": "Reason recorded in the history",
+    "niveau": "Show a member's level and experience",
+    "niveau.membre": "The member to look up, yourself by default",
+    "role": "A member's roles and nickname",
+    "role.ajouter": "Give a role to a member",
+    "role.ajouter.membre": "The member concerned",
+    "role.ajouter.role": "The role to grant",
+    "role.autoriser": "Lift a role ban",
+    "role.autoriser.membre": "The member concerned",
+    "role.autoriser.role": "The role concerned",
+    "role.interdire": "Forbid a role to a member: removed as soon as it is given",
+    "role.interdire.membre": "The member concerned",
+    "role.interdire.role": "The forbidden role",
+    "role.retirer": "Take a role from a member",
+    "role.retirer.membre": "The member concerned",
+    "role.retirer.role": "The role to take",
+    "role.surnom": "Change a member's nickname",
+    "role.surnom.membre": "The member concerned",
+    "role.surnom.surnom": "New nickname. Empty clears it",
+    "salon": "Channel locking and slowmode",
+    "salon.lent": "Set the delay between two messages",
+    "salon.lent.salon": "Target channel, the current one by default",
+    "salon.lent.secondes": "0 to disable, 21600 maximum",
+    "salon.masquer": "Hide or reveal the channel from @everyone",
+    "salon.masquer.cache": "True to hide, false to reveal",
+    "salon.masquer.salon": "Target channel, the current one by default",
+    "salon.renouveler": "Clone the channel and delete the old one: all history is gone",
+    "salon.renouveler.salon": "Target channel, the current one by default",
+    "salon.verrouiller": "Stop or allow @everyone from posting",
+    "salon.verrouiller.ferme": "True to lock, false to reopen",
+    "salon.verrouiller.raison": "Reason shown in the audit log",
+    "salon.verrouiller.salon": "Target channel, the current one by default",
+    "sanctions": "A member's sanction history",
+    "sanctions.retirer": "Remove a sanction from the history",
+    "sanctions.retirer.numero": "Number shown in the history",
+    "sanctions.vider": "Clear a member's whole history",
+    "sanctions.vider.membre": "The member concerned",
+    "sanctions.voir": "Show a member's history",
+    "sanctions.voir.membre": "The member concerned",
+    "securite": "Automatic server protections",
+    "securite.antiadmin": "Remove sensitive-permission roles given to a non-administrator",
+    "securite.antiadmin.actif": "Turn the protection on or off",
+    "securite.antibot": "Kick bots added without authorisation",
+    "securite.antibot.actif": "Turn the protection on or off",
+    "securite.antibot.action": "Action taken",
+    "securite.antinuke": "Neutralise a member deleting things in bulk",
+    "securite.antinuke.actif": "Turn the protection on or off",
+    "securite.antinuke.action": "Action taken",
+    "securite.antinuke.fenetre": "Window length in seconds",
+    "securite.antinuke.seuil": "Actions before it triggers",
+    "securite.antiping": "Forbid mentioning certain members",
+    "securite.antiping.actif": "Turn the protection on or off",
+    "securite.antiping.action": "Action taken",
+    "securite.antiraid": "Watch for join floods and brand-new accounts",
+    "securite.antiraid.actif": "Turn the protection on or off",
+    "securite.antiraid.anciennete": "Minimum account age, e.g. 7d. 0 to skip the check",
+    "securite.antiraid.arrivees": "Joins before an alert fires",
+    "securite.antiraid.fenetre": "Window length in seconds",
+    "securite.antispam": "Limit how many messages fit in a short window",
+    "securite.antispam.actif": "Turn the protection on or off",
+    "securite.antispam.action": "Action taken",
+    "securite.antispam.fenetre": "Window length in seconds",
+    "securite.antispam.messages": "Messages allowed within the window",
+    "securite.antivanity": "Restore the server's vanity URL if it changes",
+    "securite.antivanity.actif": "Turn the protection on or off",
+    "securite.antiwebhook": "Delete webhooks created by a non-administrator",
+    "securite.antiwebhook.actif": "Turn the protection on or off",
+    "securite.botautorise": "Bots that bypass anti-bot",
+    "securite.botautorise.bot": "The bot concerned",
+    "securite.botautorise.operation": "What to do",
+    "securite.domaine": "Manage the allowed domain list",
+    "securite.domaine.domaine": "For example github.com",
+    "securite.domaine.operation": "What to do",
+    "securite.etat": "Summary of every protection",
+    "securite.exemption": "Roles ignored by every protection",
+    "securite.exemption.operation": "What to do",
+    "securite.exemption.role": "The role concerned",
+    "securite.liens": "Block links and invites to other servers",
+    "securite.liens.actif": "Turn the protection on or off",
+    "securite.liens.action": "Action taken",
+    "securite.lockdown": "Lock or reopen every text channel at once",
+    "securite.lockdown.ferme": "True to close everything, false to reopen",
+    "securite.lockdown.raison": "Reason shown in the audit log",
+    "securite.mentions": "Block messages that mention too many people",
+    "securite.mentions.actif": "Turn the protection on or off",
+    "securite.mentions.action": "Action taken",
+    "securite.mentions.maximum": "Mentions allowed per message",
+    "securite.mots": "Manage the banned word list",
+    "securite.mots.action": "Action taken",
+    "securite.mots.mot": "Word or phrase",
+    "securite.mots.operation": "What to do",
+    "securite.protege": "Members who can't be mentioned",
+    "securite.protege.membre": "The member concerned",
+    "securite.protege.operation": "What to do",
+    "snipe": "Show the channel's last deleted or edited message",
+    "snipe.type": "Deleted by default",
+    "systeme": "Administration of the bot itself",
+    "systeme.avatar": "Change the bot's avatar",
+    "systeme.avatar.lien": "https link to an image",
+    "systeme.etat": "Latency, memory and uptime",
+    "systeme.nom": "Change the bot's name",
+    "systeme.nom.nom": "New name",
+    "systeme.redemarrer": "Stop the bot. It only comes back if a supervisor restarts it",
+    "systeme.sauvegarde": "Export the server structure as JSON",
+    "systeme.statut": "Change the displayed activity",
+    "systeme.statut.texte": "Text shown",
+    "systeme.statut.type": "Verb shown before the text",
+    "ticket": "Ticket system",
+    "ticket.fermer": "Close the ticket this command is typed in",
+    "ticket.panneau": "Post the ticket panel",
+    "ticket.panneau.salon": "Channel to post in, the current one by default",
+    "ticket.reglages": "Category, staff role and transcript channel",
+    "ticket.reglages.categorie": "Category the tickets are created in",
+    "ticket.reglages.limite": "Tickets a member may have open at once",
+    "ticket.reglages.staff": "Role that sees and handles tickets",
+    "ticket.reglages.transcripts": "Channel transcripts are posted to on close",
+    "ticket.sujet": "Manage the topics offered on the panel",
+    "ticket.sujet.description": "One line of explanation",
+    "ticket.sujet.emoji": "Emoji shown next to the topic",
+    "ticket.sujet.libelle": "Topic title",
+    "ticket.sujet.numero": "Number of the topic to remove",
+    "ticket.sujet.operation": "What to do",
+    "unban": "Lift a ban",
+    "unban.identifiant": "Discord ID of the banned account",
+    "unban.raison": "Reason for lifting",
+    "unmute": "Give a member their voice back",
+    "unmute.membre": "The member to release. Empty: the whole server",
+    "unmute.raison": "Reason for lifting",
+    "vocal": "Voice channel moderation",
+    "vocal.autoriser": "Give a member voice access back",
+    "vocal.autoriser.membre": "The member concerned",
+    "vocal.deconnecter": "Disconnect a member from voice",
+    "vocal.deconnecter.membre": "The member to disconnect",
+    "vocal.deplacer": "Move a member to a voice channel",
+    "vocal.deplacer.membre": "The member to move",
+    "vocal.deplacer.salon": "Destination channel, yours by default",
+    "vocal.interdire": "Ban a member from voice: disconnected as soon as they join",
+    "vocal.interdire.membre": "The member concerned",
+    "vocal.interdire.raison": "Reason",
+    "vocal.interdits": "Members banned from voice",
+    "vocal.muet": "Mute a member's microphone in voice",
+    "vocal.muet.membre": "The member concerned",
+    "vocal.parler": "Give a member their microphone back",
+    "vocal.parler.membre": "The member concerned",
+    "vocal.rassembler": "Bring a whole voice channel into yours",
+    "vocal.rassembler.salon": "Channel to empty",
+    "vocalperso": "Temporary voice channels: joining a hub creates a private one",
+    "vocalperso.activer": "Set the hub channel",
+    "vocalperso.activer.categorie": "Category to create in, the hub's own by default",
+    "vocalperso.activer.modele": "Name of the created channel, {pseudo} is replaced",
+    "vocalperso.activer.places": "Slot count, 0 for unlimited",
+    "vocalperso.activer.salon": "Voice channel whose join triggers creation",
+    "vocalperso.desactiver": "Turn the system off",
+    "vocalperso.etat": "Current configuration",
+    "warn": "Warn a member and record it",
+    "warn.membre": "The member to warn",
+    "warn.raison": "Reason for the warning",
+    "wl": "Members who bypass anti-join",
+    "wl.ajouter": "Let a member join a locked channel",
+    "wl.ajouter.membre": "The member to allow",
+    "wl.liste": "Allowed members",
+    "wl.retirer": "Remove a member from the list",
+    "wl.retirer.membre": "The member concerned",
+    "wl.vider": "Empty the list entirely",
+    "xp": "Levelling settings",
+    "xp.definir": "Set a member's experience",
+    "xp.definir.membre": "The member concerned",
+    "xp.definir.valeur": "New xp value",
+    "xp.ignorer": "Channels where no experience is earned",
+    "xp.ignorer.operation": "What to do",
+    "xp.ignorer.salon": "The channel concerned",
+    "xp.recompense": "Tie a role to a level",
+    "xp.recompense.niveau": "Level to reach",
+    "xp.recompense.operation": "What to do",
+    "xp.recompense.role": "Role to grant",
+    "xp.reglages": "Turn the system on and set the gains",
+    "xp.reglages.actif": "Turn levelling on or off",
+    "xp.reglages.annonce": "Where to announce level-ups",
+    "xp.reglages.delai": "Delay between two gains, in seconds",
+    "xp.reglages.message": "Xp earned per message",
+    "xp.reglages.salon": "Channel for level-up announcements",
+    "xp.reglages.vocal": "Xp earned per minute in voice",
+    "xp.reinitialiser": "Reset experience to zero",
+    "xp.reinitialiser.membre": "One specific member. Empty means the whole server"
+  },
+  "antijoin": {
+    "title": "Locked voice channels",
+    "locked": "{channel} is locked, nobody else can join.",
+    "unlocked": "{channel} is open again.",
+    "notLocked": "{channel} wasn't locked.",
+    "cleared": "{count} channel(s) unlocked."
+  },
+  "wl": {
+    "title": "Voice whitelist",
+    "added": "**{user}** can now join locked channels.",
+    "removed": "**{user}** no longer bypasses anti-join.",
+    "already": "**{user}** is already on the list.",
+    "notThere": "**{user}** isn't on the list.",
+    "cleared": "{count} member(s) removed from the list."
+  },
+  "vocal": {
+    "moved": "**{user}** was moved to {channel}.",
+    "disconnected": "**{user}** was disconnected from voice.",
+    "muted": "**{user}** can no longer speak.",
+    "unmuted": "**{user}** can speak again.",
+    "gathered": "{count} member(s) gathered into {channel}.",
+    "notConnected": "**{user}** isn't in a voice channel.",
+    "youAreNotConnected": "You aren't in a voice channel.",
+    "sameChannel": "That's already the channel you're in.",
+    "banned": "**{user}** is banned from voice.",
+    "unbanned": "**{user}** can join voice again.",
+    "notBanned": "**{user}** wasn't banned from voice.",
+    "bannedTitle": "Banned from voice"
+  },
+  "blacklist": {
+    "title": "Blacklist",
+    "footer": "{count} account(s)",
+    "added": "**{user}** is banned and blacklisted.",
+    "removed": "**{user}** is off the blacklist and unbanned.",
+    "already": "**{user}** is already blacklisted.",
+    "notThere": "That account isn't blacklisted.",
+    "cleared": "{count} account(s) removed. Discord bans stay in place.",
+    "defaultReason": "Blacklist"
+  },
+  "role": {
+    "added": "**{user}** was given the **{role}** role.",
+    "removed": "The **{role}** role was taken from **{user}**.",
+    "alreadyHas": "**{user}** already has the **{role}** role.",
+    "doesNotHave": "**{user}** doesn't have the **{role}** role.",
+    "aboveYou": "The **{role}** role is above yours.",
+    "nicknameSet": "**{user}**'s nickname is now **{nickname}**.",
+    "nicknameCleared": "**{user}**'s nickname was cleared.",
+    "forbidden": "The **{role}** role is now forbidden to **{user}**.",
+    "allowed": "The **{role}** role is no longer forbidden to **{user}**.",
+    "notForbidden": "The **{role}** role wasn't forbidden to **{user}**."
+  },
+  "dire": {
+    "sent": "Message posted in {channel}.",
+    "failed": "The message couldn't be posted.",
+    "badImage": "The image link must start with https://"
+  },
+  "snipe": {
+    "nothing": "Nothing to show for this channel.",
+    "noContent": "Message with no text",
+    "field": {
+      "at": "When"
+    },
+    "title": {
+      "deleted": "Last deleted message",
+      "edited": "Last edited message"
+    }
+  },
+  "autorole": {
+    "title": "Automatic roles",
+    "added": "**{role}** will be granted on every join.",
+    "removed": "**{role}** will no longer be granted automatically.",
+    "already": "**{role}** is already on the list.",
+    "notThere": "**{role}** isn't on the list.",
+    "tooMany": "At most {max} automatic roles.",
+    "managed": "**{role}** is managed by an integration and can't be assigned."
+  },
+  "invites": {
+    "unit": "invite(s)",
+    "empty": "Nobody has invited anyone yet.",
+    "leaderboard": "Invite leaderboard",
+    "bonusDone": "**{user}** now totals {total} invite(s).",
+    "unknownOrigin": "We don't know who invited **{user}**.",
+    "card": {
+      "title": "{user}'s invites",
+      "total": "Total",
+      "joined": "Joined",
+      "left": "Left",
+      "bonus": "Bonus"
+    },
+    "origin": {
+      "title": "{user}'s arrival",
+      "by": "Invited by",
+      "code": "Code used",
+      "when": "Joined on"
+    },
+    "resetAll": "Invite counters reset for {count} member(s).",
+    "resetUser": "**{user}**'s invite counter is reset."
+  },
+  "vocalperso": {
+    "title": "Temporary voice channels",
+    "enabled": "Joining {channel} will now create a private channel.",
+    "disabled": "Temporary voice channels are off.",
+    "notConfigured": "No hub channel configured.",
+    "templateNeedsName": "The template must contain `{pseudo}`.",
+    "unlimited": "unlimited",
+    "open": "{count} channel(s) open",
+    "field": {
+      "hub": "Hub channel",
+      "category": "Category",
+      "template": "Name template",
+      "limit": "Slots"
+    }
+  },
+  "systeme": {
+    "title": "Bot status",
+    "memory": "Memory",
+    "renamed": "The bot is now called **{name}**.",
+    "renameFailed": "Rename refused: {message}. Discord allows only two per hour.",
+    "avatarChanged": "Avatar updated.",
+    "badImage": "The link must start with https://",
+    "statusChanged": "Status updated. It resets to `/aide` on the next start.",
+    "backupDone": "Structure exported: {roles} role(s) and {salons} channel(s).",
+    "restarting": "Shutting down. The bot only comes back if a supervisor restarts it."
+  }
+}

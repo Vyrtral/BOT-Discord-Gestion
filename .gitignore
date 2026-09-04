@@ -1,0 +1,19 @@
+node_modules/
+
+# Contient le token : jamais sur le depot.
+config.js
+
+*.log
+
+# Base SQLite et ses fichiers temporaires (WAL)
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Transcripts de tickets generes a la fermeture
+transcripts/
+
+.DS_Store
+.vscode/
+.idea/
